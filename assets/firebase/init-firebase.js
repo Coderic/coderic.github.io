@@ -7,4 +7,6 @@ var firebaseConfig = {
     messagingSenderId: "204370804567",
     appId: "1:204370804567:web:46b70244eb62efe59a0812"
 };
-firebase.initializeApp(firebaseConfig);
+var defaultProject = firebase.initializeApp(firebaseConfig);
+
+console.log(defaultProject.name);
