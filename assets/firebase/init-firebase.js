@@ -27,13 +27,7 @@ var uiConfig = {
     // function.
     // Terms of service url/callback.
     tosUrl: 'https://coderic.net/terminos',
-    // Privacy policy url/callback.
     privacyPolicyUrl: function() {
       window.location.assign('https://coderic.net/privacidad');
     }
   };
-
-  // Initialize the FirebaseUI Widget using Firebase.
-  var ui = new firebaseui.auth.AuthUI(firebase.auth());
-  // The start method will wait until the DOM is loaded.
-  ui.start('#firebaseui-auth-container', uiConfig);
