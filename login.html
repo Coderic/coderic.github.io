@@ -4,7 +4,9 @@ title: "Prueba de Autenticacion"
 subtitle: "Todo lo que necesitas saber acerca de nosotros"
 ---
 <script>
-  var ui = new firebaseui.auth.AuthUI(firebase.auth());
-  ui.start('#firebaseui-auth-container', uiConfig);
+    $(function () {
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        ui.start('#firebaseui-auth-container', uiConfig);
+    });
 </script>
 <div id="firebaseui-auth-container"></div>
