@@ -2,6 +2,6 @@ url: "https://coderic.net" # the base hostname & protocol for your site, e.g. ht
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "Coderic" # the name of your site, e.g. ACME Corp.
 remote_theme: Coderic/jekyll-theme-coderic
-include: ['.well-known','microsoft-identity-association.json','.well-known/microsoft-identity-association.json']
+include: ['.well-known']
 plugins:
   - jekyll-remote-theme
