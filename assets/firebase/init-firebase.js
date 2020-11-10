@@ -10,6 +10,7 @@ var firebaseConfig = {
 var defaultProject = firebase.initializeApp(firebaseConfig);
 var defaultStorage = firebase.storage();
 var defaultFirestore = firebase.firestore();
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 var uiConfig = {
   signInSuccessUrl: 'https://coderic.net/',
