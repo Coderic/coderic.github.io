@@ -52,7 +52,7 @@ layout: default
       </ol>
       <ol class="inline-flex md:space-x-2 rtl:space-x-reverse" *ngIf="auth.user$ | async as user; else loggedOut">
         <li>
-          <a routerLink="/profile" class="inline-flex items-center text-sm font-medium hover:text-orange-600"
+          <a href="/profile" class="inline-flex items-center text-sm font-medium hover:text-orange-600"
             title="Profile">
             <svg class="w-3.5 h-3.5 ms-2 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
               fill="currentColor">
@@ -66,7 +66,7 @@ layout: default
           </a>
         </li>
         <li>
-          <a routerLink="/dashboard" class="inline-flex items-center text-sm font-medium hover:text-orange-600"
+          <a href="/dashboard" class="inline-flex items-center text-sm font-medium hover:text-orange-600"
             title="Dashboard">
             <svg class="w-3.5 h-3.5 ms-2 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
               fill="currentColor">
@@ -117,7 +117,7 @@ layout: default
   </div>
   <header class="flex justify-between border-t-4 border-b-8 border-orange-500">
     <div class="flex items-center w-1/4 h-32 ml-6">
-      <a routerLink="/" class="flex justify-start" itemscope itemtype="https://schema.org/Corporation">
+      <a href="/" class="flex justify-start" itemscope itemtype="https://schema.org/Corporation">
         <img src="/assets/img/coderic-isotipo.svg" itemprop="logo" alt="Coderic logo" class="h-20">
         <svg class="h-20" viewBox="0 0 140 50" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:svg="http://www.w3.org/2000/svg">
@@ -180,7 +180,7 @@ layout: default
           </li>
           <li>·</li>
           <li>
-            <a routerLink="/faqs"
+            <a href="/faqs"
               class="text-sm font-medium ms-1 hover:text-white md:ms-2"
               i18n>Faq's</a>
         </li-->
@@ -189,15 +189,15 @@ layout: default
       <nav class="flex px-4 py-2" aria-label="Policies">
         <ol class="inline-flex items-center text-stone-500 md:space-x-2 rtl:space-x-reverse">
           <li>
-            <a routerLink="/privacy" class="inline-flex items-center text-sm font-medium hover:text-white"
+            <a href="/privacy" class="inline-flex items-center text-sm font-medium hover:text-white"
               i18n>Privacy</a>
           </li>
           <li>
-            <a routerLink="/legal" class="inline-flex items-center text-sm font-medium hover:text-white" i18n>Legal</a>
+            <a href="/legal" class="inline-flex items-center text-sm font-medium hover:text-white" i18n>Legal</a>
           </li>
           <li>·</li>
           <li>
-            <a routerLink="/tos" class="text-sm font-medium ms-1 hover:text-white" i18n>Terms and Conditions</a>
+            <a href="/tos" class="text-sm font-medium ms-1 hover:text-white" i18n>Terms and Conditions</a>
           </li>
         </ol>
       </nav>
