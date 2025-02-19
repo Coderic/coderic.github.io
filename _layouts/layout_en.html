@@ -50,7 +50,7 @@ layout: default
           </a>
         </li>
       </ol>
-      <ol class="inline-flex md:space-x-2 rtl:space-x-reverse" *ngIf="auth.user$ | async as user; else loggedOut">
+      <ol class="inline-flex md:space-x-2 rtl:space-x-reverse">
         <li>
           <a href="/profile" class="inline-flex items-center text-sm font-medium hover:text-orange-600"
             title="Profile">
@@ -94,25 +94,6 @@ layout: default
           </button>
         </li>
       </ol>
-      <ng-template #loggedOut>
-        <ol class="inline-flex md:space-x-2 rtl:space-x-reverse">
-          <li>
-            <a (click)="login()" class="inline-flex items-center text-sm font-medium hover:text-orange-600"
-              title="Log in">
-              <svg class="w-3.5 h-3.5 ms-2 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                fill="currentColor">
-                <defs />
-                <title>login</title>
-                <path
-                  d="M26,30H14a2,2,0,0,1-2-2V25h2v3H26V4H14V7H12V4a2,2,0,0,1,2-2H26a2,2,0,0,1,2,2V28A2,2,0,0,1,26,30Z" />
-                <polygon points="14.59 20.59 18.17 17 4 17 4 15 18.17 15 14.59 11.41 16 10 22 16 16 22 14.59 20.59" />
-                <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32"
-                  height="32" style="fill:none" />
-              </svg> <span class="hidden sm:inline-block">Sign in</span>
-            </a>
-          </li>
-        </ol>
-      </ng-template>
     </nav>
   </div>
   <header class="flex justify-between border-t-4 border-b-8 border-orange-500">
