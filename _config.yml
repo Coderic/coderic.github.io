@@ -1,3 +1,9 @@
 url: "https://new.coderic.org" # Maybe https://coderic.org
 baseurl: "" # Changed as project /blog
 title: "Coderic"
+permalink: pretty
+plugins:
+- jekyll-sitemap
+- jekyll-seo-tag
+- jekyll-feed
+- jekyll-github-metadata
