@@ -24,8 +24,6 @@
       clientID: 'In43D8hfptI5B17Xo7XZX4aBkhfMuH56',
       domain: 'auth.coderic.org',
       redirectUri: 'https://'+window.location.hostname+'/',
-      audience: `https://coderic.eu.auth0.com/api/v2/`,
-      scope: 'read:current_user',
       responseType: 'token id_token'
     });
     
@@ -35,12 +33,8 @@
 
     $(document).ready(function() {
     
-    
     webAuth.checkSession(
-      {
-        audience: `https://coderic.eu.auth0.com/api/v2/`,
-        scope: 'read:current_user'
-      }, 
+      {}, 
       function(err, result) {
         if (err || !result || !result.accessToken) {
           $(".guest").show();
