@@ -29,21 +29,13 @@
       responseType: 'token id_token'
     });
     
-
-    function login() {
-      webAuth.authorize();
-    }
+    logout = () => webAuth.logout({
+        returnTo: 'https://' +window.location.hostname + '/'
+    });
 
     $(document).ready(function() {
     
-    $(".login-btn").click(() => {
-      webAuth.authorize();
-      return false;
-    });
-    $(".logout-btn").click(() => webAuth.logout({
-        returnTo: 'https://' +window.location.hostname + '/'
-    }));
-
+    
     webAuth.checkSession(
       {
         audience: `https://coderic.eu.auth0.com/api/v2/`,
