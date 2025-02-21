@@ -36,6 +36,7 @@
     webAuth.checkSession(
       {}, 
       function(err, result) {
+        console.dir(result);
         if (err || !result || !result.accessToken) {
           $(".guest").show();
           $(".authenticated").hide();
