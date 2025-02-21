@@ -16,6 +16,7 @@
   <meta name="title" content="Coderic">
   <meta name="description"
   content="Corporation Oriented to the Development of Engineering of Resources Information Commercial">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <script src="https://cdn.auth0.com/js/auth0/9.28.0/auth0.min.js"></script>
   <script type="text/javascript">
@@ -27,14 +28,38 @@
       scope: 'read:current_user',
       responseType: 'token id_token'
     });
+    
+
     function login() {
       webAuth.authorize();
     }
-    function logout() {
-      webAuth.logout({
+
+    $(document).ready(function() {
+    
+    $(".login-btn").click(() => {
+      webAuth.authorize();
+      return false;
+    });
+    $(".logout-btn").click(() => webAuth.logout({
         returnTo: 'https://' +window.location.hostname + '/'
-      });
-    }
+    }));
+
+    webAuth.checkSession(
+      {
+        audience: `https://coderic.eu.auth0.com/api/v2/`,
+        scope: 'read:current_user'
+      }, 
+      function(err, result) {
+        if (err || !result || !result.accessToken) {
+          $(".guest").show();
+          $(".authenticated").hide();
+        } else {
+          $(".guest").hide();
+          $(".authenticated").show();
+        }
+      }
+      );
+    });
   </script>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   {% for localized_page in localized_pages %}
