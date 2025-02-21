@@ -1,25 +1,34 @@
 var webAuth = new auth0.WebAuth({
-    clientID: 'In43D8hfptI5B17Xo7XZX4aBkhfMuH56',
-    domain: 'auth.coderic.org',
-    audience: `https://coderic.eu.auth0.com/api/v2/`,
-    scope: 'openid profile email',
-    redirectUri: 'https://coderic.org',
-    responseType: 'token id_token'
+  clientID: 'In43D8hfptI5B17Xo7XZX4aBkhfMuH56',
+  domain: 'auth.coderic.org',
+  audience: `https://coderic.eu.auth0.com/api/v2/`,
+  scope: 'openid profile email',
+  redirectUri: 'https://coderic.org/callback',
+  responseType: 'token id_token'
 });
 
-$(document).ready(function() {
-    webAuth.checkSession(
+login = () => webAuth.authorize({
+  audience: 'https://coderic.eu.auth0.com/api/v2/',
+  scope: 'openid profile email',
+  redirectUri: 'https://coderic.org/callback'
+});
+logout = () => webAuth.logout({
+  returnTo: 'https://coderic.org/logout'
+});
+
+load = () => {
+  webAuth.checkSession(
     {
-        audience: 'https://coderic.eu.auth0.com/api/v2/',
-        scope: 'openid profile email',
+      audience: 'https://coderic.eu.auth0.com/api/v2/',
+      scope: 'openid profile email',
     },
-    function(err, result) {
+    function (err, result) {
       console.dir(result);
       if (err || !result || !result.accessToken) {
         $(".guest").show();
         $(".authenticated").hide();
       } else {
-        webAuth.client.userInfo(result.accessToken, function(err, user) {
+        webAuth.client.userInfo(result.accessToken, function (err, user) {
           if (!err && user) {
             $("#username").text(user.name).show();
           }
@@ -28,13 +37,9 @@ $(document).ready(function() {
         $(".authenticated").show();
       }
     });
-  });
+};
 
-login = () => webAuth.authorize({
-      audience: 'https://coderic.eu.auth0.com/api/v2/',
-      scope: 'openid profile email',
-      redirectUri: 'https://coderic.org'
-});
-logout = () => webAuth.logout({
-      returnTo: 'https://coderic.org'
+
+$(document).ready(function () {
+  load();
 });
