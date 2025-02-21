@@ -3,7 +3,7 @@ var webAuth = new auth0.WebAuth({
     domain: 'auth.coderic.org',
     audience: `https://coderic.eu.auth0.com/api/v2/`,
     scope: 'openid profile email',
-    redirectUri: 'https://'+window.location.hostname+'/',
+    redirectUri: 'https://coderic.org',
     responseType: 'token id_token'
 });
 
@@ -33,8 +33,8 @@ $(document).ready(function() {
 login = () => webAuth.authorize({
       audience: 'https://coderic.eu.auth0.com/api/v2/',
       scope: 'openid profile email',
-      redirectUri: 'https://coderic.org/'
+      redirectUri: 'https://coderic.org'
 });
 logout = () => webAuth.logout({
-      returnTo: 'https://' +window.location.hostname + '/'
+      returnTo: 'https://coderic.org'
 });
