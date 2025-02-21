@@ -14,9 +14,28 @@
   <link rel="alternate" href="https://coderic.org/" hreflang="x-default">
   <meta name="author" content="Coderic">
   <meta name="title" content="Coderic">
-  <meta name="description" i18n-content
-    content="Corporation Oriented to the Development of Engineering of Resources Information Commercial">
+  <meta name="description"
+  content="Corporation Oriented to the Development of Engineering of Resources Information Commercial">
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.auth0.com/js/auth0/9.28.0/auth0.min.js"></script>
+  <script type="text/javascript">
+    var webAuth = new auth0.WebAuth({
+      clientID: 'In43D8hfptI5B17Xo7XZX4aBkhfMuH56',
+      domain: 'auth.coderic.org',
+      redirectUri: 'https://'+window.location.hostname+'/',
+      audience: `https://coderic.eu.auth0.com/api/v2/`,
+      scope: 'read:current_user',
+      responseType: 'token id_token'
+    });
+    function login() {
+      webAuth.authorize();
+    }
+    function logout() {
+      webAuth.logout({
+        returnTo: 'https://' +window.location.hostname + '/'
+      });
+    }
+  </script>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   {% for localized_page in localized_pages %}
   {% unless localized_page.locale == page.locale %}
