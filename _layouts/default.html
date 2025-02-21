@@ -16,58 +16,20 @@
   <meta name="title" content="Coderic">
   <meta name="description"
   content="Corporation Oriented to the Development of Engineering of Resources Information Commercial">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-  <script src="https://cdn.auth0.com/js/auth0/9.28.0/auth0.min.js"></script>
-  <script type="text/javascript">
-    var webAuth = new auth0.WebAuth({
-      clientID: 'In43D8hfptI5B17Xo7XZX4aBkhfMuH56',
-      domain: 'auth.coderic.org',
-      audience: `https://coderic.eu.auth0.com/api/v2/`,
-      scope: 'openid profile email',
-      redirectUri: 'https://'+window.location.hostname+'/',
-      responseType: 'token id_token'
-    });
-    
-    logout = () => webAuth.logout({
-        returnTo: 'https://' +window.location.hostname + '/'
-    });
-
-    $(document).ready(function() {
-    
-    webAuth.checkSession(
-      {}, 
-      function(err, result) {
-        console.dir(result);
-        if (err || !result || !result.accessToken) {
-          $(".guest").show();
-          $(".authenticated").hide();
-        } else {
-          webAuth.client.userInfo(result.accessToken, function(err, user) {
-            if (!err && user) {
-              $("#username").text(user.name).show();
-            }
-          });
-          $(".guest").hide();
-          $(".authenticated").show();
-        }
-      }
-      );
-    });
-  </script>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   {% for localized_page in localized_pages %}
   {% unless localized_page.locale == page.locale %}
   <link rel="alternate" hreflang="{{ localized_page.lang }}" href="{{ site.url }}{{ site.baseurl }}{{ localized_page.url }}">
   {% endunless %}
   {% endfor %}
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Corporation",
       "name": "Coderic",
       "url": "https://coderic.org/",
-      "logo": "https://coderic.org/assets/img/coderic-isotipo.svg",
+      "logo": "https://coderic.org/favicon.svg",
       "contactPoint": [
         {
           "@type": "ContactPoint",
@@ -107,6 +69,12 @@
         }
       ],
       "sameAs": [
+        "https://coderic.co",
+        "https://coderic.cloud",
+        "https://coderic.net",
+        "https://coderic.org",
+        "https://x.com/Coderic",
+        "https://x.com/Coderic",
         "https://x.com/Coderic",
         "https://linkedin.com/company/coderic/",
         "https://github.com/Coderic"
@@ -131,6 +99,8 @@
     </div>
   </div>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.auth0.com/js/auth0/9.28.0/auth0.min.js"></script>
+  <script type="text/javascript" src="https://coderic.org/js/auth.js"></script>
 </body>
-
 </html>
