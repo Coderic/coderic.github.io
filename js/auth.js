@@ -14,7 +14,10 @@ var webAuth = new auth0.WebAuth({
   $(document).ready(function() {
   
   webAuth.checkSession(
-    {}, 
+    {
+        audience: 'https://coderic.eu.auth0.com/api/v2/',
+        scope: 'openid profile email',
+    }, 
     function(err, result) {
       console.dir(result);
       if (err || !result || !result.accessToken) {
