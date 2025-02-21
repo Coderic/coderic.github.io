@@ -31,9 +31,9 @@ $(document).ready(function() {
   });
 
 login = () => webAuth.authorize({
-      connection: 'saml',
-      connection_scope: 'openid profile email',
-      prompt: 'none',
+      audience: 'https://coderic.eu.auth0.com/api/v2/',
+      scope: 'openid profile email',
+      redirectUri: 'https://coderic.org/'
 });
 logout = () => webAuth.logout({
       returnTo: 'https://' +window.location.hostname + '/'
