@@ -30,6 +30,11 @@ $(document).ready(function() {
     });
   });
 
+login = () => webAuth.authorize({
+      connection: 'saml',
+      connection_scope: 'openid profile email',
+      prompt: 'none',
+});
 logout = () => webAuth.logout({
       returnTo: 'https://' +window.location.hostname + '/'
 });
