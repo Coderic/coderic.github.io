@@ -1,7 +1,7 @@
 url: "https://new.coderic.org" # Maybe https://coderic.org
 baseurl: "" # Changed as project /blog
 title: "Coderic"
-network: "CORPORATION"
+network: ""
 permalink: pretty
 plugins:
 - jekyll-sitemap
