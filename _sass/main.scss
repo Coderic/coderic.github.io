@@ -50,6 +50,98 @@ select:focus {
   transform: translateX(-50%);
 }
 
+// Navigation Components using @apply
+.nav-link {
+  @apply inline-flex items-center gap-1 transition-colors;
+  @apply hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded;
+}
+
+.nav-link-sm {
+  @apply nav-link px-1 text-xs sm:text-sm;
+}
+
+.nav-link-md {
+  @apply nav-link px-2 py-1 text-xs sm:text-sm;
+}
+
+.nav-menu-item {
+  @apply flex items-center justify-center h-16 px-4 font-semibold text-white;
+  @apply transition-colors hover:bg-stone-700;
+  @apply focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500;
+}
+
+.nav-menu-item-mobile {
+  @apply block px-4 py-3 text-white font-semibold;
+  @apply transition-colors hover:bg-stone-700;
+  @apply focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500;
+}
+
+.nav-icon {
+  @apply w-3 h-3 sm:w-4 sm:h-4;
+}
+
+.nav-icon-lg {
+  @apply w-6 h-6;
+}
+
+// Button components
+.btn {
+  @apply inline-flex items-center justify-center font-semibold rounded-lg;
+  @apply transition-colors focus:outline-none focus:ring-4;
+}
+
+.btn-primary {
+  @apply btn bg-orange-600 hover:bg-orange-500 text-white;
+  @apply focus:ring-orange-300;
+}
+
+.btn-secondary {
+  @apply btn bg-stone-700 hover:bg-stone-600 text-white;
+  @apply focus:ring-stone-300;
+}
+
+.btn-sm {
+  @apply py-2 px-4 text-sm sm:text-base;
+}
+
+.btn-md {
+  @apply py-3 px-6 text-base sm:text-lg;
+}
+
+.btn-lg {
+  @apply py-3 px-6 text-base sm:text-lg;
+}
+
+// Container utilities
+.container-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-8 sm:py-12 lg:py-16;
+}
+
+// Typography utilities
+.heading-1 {
+  @apply text-3xl sm:text-4xl lg:text-5xl font-bold;
+}
+
+.heading-2 {
+  @apply text-2xl sm:text-3xl lg:text-4xl font-bold;
+}
+
+.heading-3 {
+  @apply text-xl sm:text-2xl lg:text-3xl font-semibold;
+}
+
+.text-body {
+  @apply text-base sm:text-lg;
+}
+
+.text-body-sm {
+  @apply text-sm sm:text-base;
+}
+
 // Logo and branding
 .coderic {
   vertical-align: middle;
@@ -78,6 +170,13 @@ select:focus {
   background-image: url(../../images/pattern.png);
 }
 
+.jumbotron {
+  background-image: url(../../images/breadcumb-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 // Card animations
 .cards-animate .card {
   position: relative;
@@ -98,13 +197,6 @@ select:focus {
   z-index: -1;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.jumbotron {
-  background-image: url(../../images/breadcumb-bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
 }
 
 .cards-animate .card::after {
@@ -217,6 +309,7 @@ select:focus {
   list-style: none;
   margin-bottom: 3em;
   padding-left: 0;
+  padding-top: 2em;
 }
 
 .lang-grid li {
@@ -244,16 +337,6 @@ select:focus {
 
 .lang-grid li .lang-logo:hover span {
   color: #000;
-}
-
-.lang-grid {
-  padding-top: 2em;
-}
-
-.lang-grid li .lang-logo {
-  display: block;
-  position: relative;
-  font-weight: 700;
 }
 
 .lang-logo {
@@ -313,26 +396,14 @@ select:focus {
   background-position: -400px 0;
 }
 
-.lang-logo.scala {
-  background-position: -480px -80px;
-}
-
-.lang-logo.scala:hover {
-  background-position: -480px 0;
-}
-
-.lang-logo.scala-play {
-  background-position: -480px -80px;
-}
-
-.lang-logo.scala-play:hover {
-  background-position: -480px 0;
-}
-
+.lang-logo.scala,
+.lang-logo.scala-play,
 .lang-logo.scala-and-play {
   background-position: -480px -80px;
 }
 
+.lang-logo.scala:hover,
+.lang-logo.scala-play:hover,
 .lang-logo.scala-and-play:hover {
   background-position: -480px 0;
 }
@@ -345,18 +416,12 @@ select:focus {
   background-position: -560px 0;
 }
 
-.lang-logo.dotnet {
-  background-position: -640px -80px;
-}
-
-.lang-logo.dotnet:hover {
-  background-position: -640px 0;
-}
-
+.lang-logo.dotnet,
 .lang-logo.net {
   background-position: -640px -80px;
 }
 
+.lang-logo.dotnet:hover,
 .lang-logo.net:hover {
   background-position: -640px 0;
 }
