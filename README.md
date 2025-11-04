@@ -8,20 +8,29 @@ Sitio web oficial de la organización Coderic - Una Software Factory dedicada a 
 
 ### Layouts de Jekyll
 
-El proyecto sigue la estructura estándar de Jekyll con los siguientes layouts:
+El proyecto sigue la estructura estándar de Jekyll con dos layouts principales:
 
 ```
 _layouts/
-  ├── default.html      # Layout base con head, scripts y estructura HTML
-  ├── page.html         # Layout para páginas de contenido (hereda de default)
-  ├── layout.html       # Layout alternativo (legacy)
-  ├── layout_en.html    # Layout en inglés (legacy)
-  └── layout_es.html    # Layout en español (legacy)
+  ├── default.html      # Layout base con HTML, head, header, footer y scripts
+  └── page.html         # Layout para páginas de contenido (hereda de default, agrega navegación)
 ```
 
-**Uso correcto:** Todas las páginas de contenido deben usar `layout: page` en su front matter.
+#### default.html
+Layout base que proporciona:
+- Estructura HTML completa
+- Meta tags y SEO
+- Header con logo Coderic
+- Footer con enlaces y copyright
+- Scripts (Google Analytics, Auth0, jQuery)
 
-Ejemplo:
+#### page.html
+Layout para páginas de contenido que hereda de `default.html` y agrega:
+- Breadcrumb de navegación del ecosistema (FinTech, Cloud, Hub, Organization)
+- Portal de navegación principal (Development, Crowdfunding, Coworking, etc.)
+
+**Uso:**
+
 ```yaml
 ---
 layout: page
@@ -40,7 +49,13 @@ title: "Título de la Página"
 ├── coworking/             # Espacios de trabajo
 ├── freelancers/           # Red de freelancers
 ├── learning/              # Academia de aprendizaje
-└── community/             # Comunidad open source
+├── community/             # Comunidad open source
+├── dashboard/             # Panel de usuario
+├── profile/               # Perfil de usuario
+├── organization/          # Información organizacional
+├── privacy/               # Política de privacidad
+├── legal/                 # Información legal
+└── tos/                   # Términos y condiciones
 ```
 
 ## 🌐 Ecosistema Coderic
@@ -84,7 +99,7 @@ Ecosistema vibrante de colaboración donde desarrolladores, creadores e innovado
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/Coderic/coderic.org.git
+git clone https://github.com/Coderic/coderic.github.io.git
 
 # Instalar dependencias
 bundle install
@@ -98,12 +113,34 @@ bundle exec jekyll serve
 ## 🎨 Personalización
 
 ### Colores Principales
-- **Orange**: `#ea580c` (orange-600)
-- **Stone**: `#292524` (stone-800)
+- **Orange**: `#f97316` (orange-500) - Color principal de marca
+- **Stone**: `#292524` (stone-800) - Color de texto y fondos
 - **Gradients**: Utilizados en heroes de cada sección
 
 ### Fuentes
 - **Red Hat Display** - Fuente principal del sitio
+
+## 📁 Estructura de Archivos
+
+```
+/workspace/
+├── _layouts/              # Layouts de Jekyll
+│   ├── default.html       # Layout base
+│   └── page.html          # Layout de páginas
+├── _includes/             # Componentes reutilizables
+│   └── portal.html        # Navegación principal
+├── _sass/                 # Estilos SCSS
+│   └── main.scss          
+├── assets/                # Assets estáticos
+│   ├── css/
+│   ├── img/
+│   └── icons/
+├── [pages]/               # Páginas del sitio
+│   └── index.html
+├── _config.yml            # Configuración Jekyll
+├── README.md              # Este archivo
+└── CHANGELOG.md           # Historial de cambios
+```
 
 ## 📝 Contribuir
 
@@ -114,6 +151,14 @@ Coderic es una organización de código abierto. ¡Las contribuciones son bienve
 3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
+
+### Guías de Contribución
+
+- Usa `layout: page` para todas las páginas de contenido
+- Mantén el diseño consistente con Tailwind CSS
+- Sigue las convenciones de nomenclatura existentes
+- Documenta cambios significativos en CHANGELOG.md
+- Asegúrate de que el sitio se construya sin errores con `jekyll build`
 
 ## 📄 Licencia
 
@@ -133,11 +178,23 @@ Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más det
 - **GitHub**: [github.com/Coderic](https://github.com/Coderic)
 - **Email**: hello@coderic.org
 - **Documentación**: [coderic.org/docs](https://coderic.org/docs)
+- **Twitter**: [@Coderic](https://x.com/Coderic)
+- **LinkedIn**: [linkedin.com/company/coderic](https://linkedin.com/company/coderic/)
 
 ## 🏆 Historia
 
 Fundada el **30 de septiembre de 2004**, Coderic ha evolucionado de un pequeño grupo de desarrolladores apasionados a una Software Factory reconocida internacionalmente, manteniendo siempre sus valores fundamentales de transparencia, calidad y comunidad.
 
+### Hitos Importantes
+
+- **2004** - Fundación de Coderic
+- **2010** - Expansión a servicios de coworking
+- **2015** - Lanzamiento de plataforma de learning
+- **2020** - Red de freelancers y crowdfunding
+- **2024** - Ecosistema completo integrado
+
 ---
 
 **Coderic** © 2004-2024 · Desde septiembre 30, 2004
+
+*Corporation Oriented to the Development of Engineering Resources and Information for Commerce*

@@ -1,14 +1,32 @@
 # Changelog - Refactorización Coderic.org
 
+## [2.1.0] - 2025-11-04
+
+### 🧹 Limpieza y Optimización
+
+#### Eliminación de Código Obsoleto
+- ❌ Removidos layouts antiguos innecesarios
+- ✅ Simplificado `page.html` eliminando duplicación
+- ✅ Optimizada navegación breadcrumb
+- ✅ Actualizada documentación (README, CHANGELOG)
+- ✅ Estructura de layouts limpia: solo `default.html` y `page.html`
+
+#### Mejoras de Código
+- Eliminada duplicación entre layouts
+- Código más mantenible y profesional
+- Sin referencias a código "legacy" u obsoleto
+- Documentación clara y actualizada
+
 ## [2.0.0] - 2025-11-03
 
 ### ✨ Características Principales
 
-#### Estructura de Layouts Corregida
+#### Estructura de Layouts Limpia y Profesional
 - ✅ Creado `_layouts/page.html` siguiendo el estándar de Jekyll
 - ✅ Todas las páginas ahora usan `layout: page` correctamente
 - ✅ Jerarquía de layouts: `page.html` → `default.html`
-- ✅ Eliminado uso de `layout: layout_en` no estándar
+- ✅ Solo 2 layouts: `default.html` (base) y `page.html` (contenido)
+- ✅ Eliminada toda duplicación de código
 
 #### Contenido Refactorizado
 
@@ -88,11 +106,8 @@
 ```
 /workspace/
 ├── _layouts/
-│   ├── default.html      # Layout base
-│   ├── page.html         # Layout estándar para páginas ✨ NUEVO
-│   ├── layout.html       # Legacy
-│   ├── layout_en.html    # Legacy
-│   └── layout_es.html    # Legacy
+│   ├── default.html      # Layout base (HTML completo)
+│   └── page.html         # Layout para páginas ✨ NUEVO
 ├── _includes/
 │   └── portal.html       # Navegación principal (actualizado)
 ├── index.html            # Página principal (refactorizado)
