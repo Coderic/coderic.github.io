@@ -96,8 +96,8 @@
     </div>
 
     <!-- Main Menu Bar -->
-    <div class="container-padding">
-      <div class="flex items-center justify-between">
+    <div class="container-padding relative">
+      <div class="flex items-center justify-between w-full">
         <!-- Mobile menu button -->
         <button
           class="lg:hidden py-3 px-2 text-white hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-md transition-colors"
@@ -111,8 +111,8 @@
           </svg>
         </button>
         
-        <!-- Desktop Navigation -->
-        <ul class="hidden lg:flex flex-row items-center" role="menubar" id="main-menu-desktop">
+        <!-- Desktop Navigation - Always visible on large screens -->
+        <ul class="hidden lg:flex flex-row items-center flex-1" role="menubar" id="main-menu-desktop">
           <li role="none">
             <a class="nav-menu-item" href="/development" role="menuitem" aria-label="Development">DEVELOPMENT</a>
           </li>
