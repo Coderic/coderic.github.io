@@ -1,5 +1,27 @@
 # Changelog - Refactorización Coderic.org
 
+## [2.1.1] - 2025-11-04
+
+### 🐛 Corrección Crítica de Errores
+
+#### Corrección de Layouts
+- 🔧 Corregido HTML malformado en `portal.html`
+  - Eliminadas etiquetas `<li>` y `</ul>` huérfanas
+  - Reconstruida estructura completa de navegación
+  - Añadido menú móvil responsive funcional
+  - Mejorada accesibilidad (ARIA labels, focus states)
+- 🔧 Limpiado `default.html`
+  - Removida lógica obsoleta de `page.navigation`
+  - Eliminada inclusión condicional de navegación
+  - Estructura más limpia y simple
+
+#### Mejoras de Navegación
+- ✅ Navegación desktop y móvil totalmente funcional
+- ✅ Enlaces del ecosistema correctamente estructurados
+- ✅ Botones de autenticación (Sign in, Dashboard, Profile, Sign out)
+- ✅ Estilos hover y focus states mejorados
+- ✅ Toggle menu móvil con JavaScript
+
 ## [2.1.0] - 2025-11-04
 
 ### 🧹 Limpieza y Optimización
