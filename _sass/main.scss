@@ -79,6 +79,10 @@ select:focus {
 .nav-icon {
   @apply w-4 h-4;
   flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .nav-icon-lg {
