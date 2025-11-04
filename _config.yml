@@ -1,10 +1,29 @@
-url: "https://new.coderic.org" # Maybe https://coderic.org
-baseurl: "" # Changed as project /blog
+url: "https://coderic.org"
+baseurl: ""
 title: "Coderic"
 network: ""
+description: "Corporation Oriented to the Development of Engineering Resources and Information for Commerce"
 permalink: pretty
+
+# Theme configuration
+theme: null
+
+# Plugins
 plugins:
-- jekyll-sitemap
-- jekyll-seo-tag
-- jekyll-feed
-- jekyll-github-metadata
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-github-metadata
+
+# Sass configuration
+sass:
+  style: compressed
+  sourcemap: never
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - coderic.org.gemspec

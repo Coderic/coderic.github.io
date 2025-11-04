@@ -1,0 +1,178 @@
+---
+layout: default
+navigation: portal.html
+title: "Profile"
+---
+
+<div class="bg-gradient-to-r from-stone-800 to-stone-900 text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="mb-6">
+      <div class="w-24 h-24 bg-stone-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+        <svg class="w-16 h-16 text-stone-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </svg>
+      </div>
+      <h1 class="heading-1 mb-2" id="profile-username">User Profile</h1>
+      <p class="text-body text-gray-300">Manage your account and preferences</p>
+    </div>
+  </div>
+</div>
+
+<section class="max-w-4xl mx-auto container-padding section-padding">
+  <!-- Profile Information -->
+  <div class="bg-white border-2 border-stone-200 rounded-lg p-6 sm:p-8 mb-8">
+    <h2 class="heading-3 text-stone-800 mb-6">Profile Information</h2>
+    <div class="space-y-6">
+      <div>
+        <label class="block text-sm font-semibold text-stone-700 mb-2">Username</label>
+        <div class="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3">
+          <p class="text-body text-gray-900" id="profile-username-display">-</p>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-stone-700 mb-2">Email</label>
+        <div class="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3">
+          <p class="text-body text-gray-900" id="profile-email">-</p>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-stone-700 mb-2">Member Since</label>
+        <div class="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3">
+          <p class="text-body text-gray-900">September 30, 2004</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Account Settings -->
+  <div class="bg-white border-2 border-stone-200 rounded-lg p-6 sm:p-8 mb-8">
+    <h2 class="heading-3 text-stone-800 mb-6">Account Settings</h2>
+    <div class="space-y-4">
+      <div class="flex items-center justify-between py-4 border-b border-stone-200">
+        <div>
+          <h3 class="text-lg font-semibold text-stone-800 mb-1">Email Notifications</h3>
+          <p class="text-sm text-gray-600">Receive updates about your repositories and community activity</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" class="sr-only peer" checked>
+          <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-orange-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-600"></div>
+        </label>
+      </div>
+      <div class="flex items-center justify-between py-4 border-b border-stone-200">
+        <div>
+          <h3 class="text-lg font-semibold text-stone-800 mb-1">Repository Notifications</h3>
+          <p class="text-sm text-gray-600">Get notified about issues, pull requests, and discussions</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" class="sr-only peer" checked>
+          <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-orange-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-600"></div>
+        </label>
+      </div>
+      <div class="flex items-center justify-between py-4">
+        <div>
+          <h3 class="text-lg font-semibold text-stone-800 mb-1">Public Profile</h3>
+          <p class="text-sm text-gray-600">Make your profile visible to other community members</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" class="sr-only peer">
+          <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-orange-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-600"></div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- GitHub Integration -->
+  <div class="bg-white border-2 border-stone-200 rounded-lg p-6 sm:p-8 mb-8">
+    <h2 class="heading-3 text-stone-800 mb-6">GitHub Integration</h2>
+    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-6">
+      <p class="text-body text-gray-700 mb-4">
+        Your Coderic account is connected to GitHub. This allows you to:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-body text-gray-700 ml-4">
+        <li>Access Coderic repositories</li>
+        <li>Contribute to open source projects</li>
+        <li>Track your contributions and activity</li>
+        <li>Participate in community discussions</li>
+      </ul>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="https://github.com/Coderic" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-md flex-1 text-center" aria-label="View GitHub profile">
+        View on GitHub
+      </a>
+      <a href="https://github.com/settings/connections/applications" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-md flex-1 text-center" aria-label="Manage GitHub connections">
+        Manage Connections
+      </a>
+    </div>
+  </div>
+
+  <!-- Activity Summary -->
+  <div class="bg-white border-2 border-stone-200 rounded-lg p-6 sm:p-8 mb-8">
+    <h2 class="heading-3 text-stone-800 mb-6">Activity Summary</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="text-center p-4 bg-stone-50 rounded-lg">
+        <p class="text-2xl font-bold text-orange-600 mb-1" id="activity-repos">-</p>
+        <p class="text-sm text-gray-600">Repositories</p>
+      </div>
+      <div class="text-center p-4 bg-stone-50 rounded-lg">
+        <p class="text-2xl font-bold text-orange-600 mb-1" id="activity-commits">-</p>
+        <p class="text-sm text-gray-600">Commits</p>
+      </div>
+      <div class="text-center p-4 bg-stone-50 rounded-lg">
+        <p class="text-2xl font-bold text-orange-600 mb-1" id="activity-prs">-</p>
+        <p class="text-sm text-gray-600">Pull Requests</p>
+      </div>
+      <div class="text-center p-4 bg-stone-50 rounded-lg">
+        <p class="text-2xl font-bold text-orange-600 mb-1" id="activity-issues">-</p>
+        <p class="text-sm text-gray-600">Issues</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Danger Zone -->
+  <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6 sm:p-8">
+    <h2 class="heading-3 text-red-800 mb-4">Danger Zone</h2>
+    <div class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h3 class="text-lg font-semibold text-red-800 mb-1">Disconnect Account</h3>
+          <p class="text-sm text-gray-700">Disconnect your GitHub account from Coderic. You'll need to reconnect to access repositories.</p>
+        </div>
+        <button type="button" class="btn-secondary btn-sm whitespace-nowrap" onclick="if(confirm('Are you sure you want to disconnect your account?')) { alert('Feature coming soon'); }">
+          Disconnect
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Load user information if authenticated
+  if (typeof load === 'function') {
+    load();
+  }
+  
+  // Update profile information
+  document.addEventListener('DOMContentLoaded', function() {
+    const username = document.getElementById('username');
+    const profileUsername = document.getElementById('profile-username');
+    const profileUsernameDisplay = document.getElementById('profile-username-display');
+    
+    if (username && username.textContent) {
+      profileUsername.textContent = username.textContent;
+      profileUsernameDisplay.textContent = username.textContent;
+    }
+    
+    // Try to get email from Auth0 if available
+    if (typeof webAuth !== 'undefined') {
+      webAuth.checkSession({}, function(err, result) {
+        if (!err && result && result.accessToken) {
+          webAuth.client.userInfo(result.accessToken, function(err, user) {
+            if (!err && user && user.email) {
+              document.getElementById('profile-email').textContent = user.email;
+            }
+          });
+        }
+      });
+    }
+  });
+</script>

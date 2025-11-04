@@ -1,24 +1,226 @@
+// Base variables
 $backgroundColor: #ffffff;
 $bodyColor: #000000;
-$bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+$bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
+// Theme configuration
+@theme {
+  --font-sans: 'Red Hat Display', ui-sans, system-ui, sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+// Base styles
 body {
   background: $backgroundColor;
   color: $bodyColor;
   font-family: $bodyFont;
-}
-@theme {
-    --font-sans: 'Red Hat Display', ui-sans, system-ui, sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-        'Noto Color Emoji';
-}
-
-[x-cloak] {
-    display: none;
-}
-
-body {
   font-family: 'Red Hat Display', sans;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+// Accessibility improvements
+*:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+// Skip to main content link for screen readers
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Navigation Components using @apply
+.nav-link {
+  @apply inline-flex items-center gap-1 transition-colors;
+  @apply hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded;
+}
+
+.nav-link-sm {
+  @apply nav-link px-1 text-xs sm:text-sm;
+}
+
+.nav-link-md {
+  @apply nav-link px-2 py-1 text-xs sm:text-sm;
+}
+
+// Modern Navigation Menu Items
+.nav-menu-item-desktop {
+  @apply block px-4 py-2 text-sm font-semibold text-white rounded-md;
+  @apply transition-all duration-200;
+  @apply hover:bg-orange-600 hover:text-white;
+  @apply focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-stone-900;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-menu-item-desktop::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #f97316;
+  transition: width 0.3s ease;
+}
+
+.nav-menu-item-desktop:hover::after,
+.nav-menu-item-desktop:focus::after {
+  width: calc(100% - 2rem);
+}
+
+.nav-menu-item-mobile {
+  @apply block px-4 py-3 text-base font-semibold text-white rounded-md;
+  @apply transition-colors duration-200;
+  @apply hover:bg-stone-800 hover:text-orange-500;
+  @apply focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-inset;
+  text-decoration: none;
+}
+
+/* Ensure menu container is visible on large screens */
+@media (min-width: 1024px) {
+  #main-menu-desktop {
+    display: flex !important;
+  }
+}
+
+.nav-icon {
+  @apply w-4 h-4;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav-icon-lg {
+  @apply w-6 h-6;
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  @apply w-4 h-4 mr-2;
+  flex-shrink: 0;
+}
+
+// Button components
+.btn {
+  @apply inline-flex items-center justify-center font-semibold rounded-lg;
+  @apply transition-all duration-200 focus:outline-none focus:ring-4;
+  @apply transform hover:scale-105 active:scale-95;
+}
+
+.btn-primary {
+  @apply btn bg-orange-600 hover:bg-orange-500 text-white shadow-lg;
+  @apply focus:ring-orange-300 hover:shadow-xl;
+}
+
+.btn-secondary {
+  @apply btn bg-stone-700 hover:bg-stone-600 text-white shadow-lg;
+  @apply focus:ring-stone-300 hover:shadow-xl;
+}
+
+.btn-sm {
+  @apply py-2 px-4 text-sm;
+}
+
+.btn-md {
+  @apply py-2.5 px-6 text-base;
+}
+
+.btn-lg {
+  @apply py-3.5 px-8 text-lg;
+}
+
+// Service Cards
+.service-card {
+  @apply bg-white rounded-xl p-6 shadow-md border border-gray-200;
+  @apply transition-all duration-300 hover:shadow-xl hover:border-orange-500;
+  @apply transform hover:-translate-y-1;
+  text-decoration: none;
+  display: block;
+}
+
+.service-card-icon {
+  @apply w-12 h-12 rounded-lg bg-orange-100 text-orange-600;
+  @apply flex items-center justify-center mb-4;
+  @apply transition-all duration-300;
+  
+  svg {
+    @apply w-6 h-6;
+  }
+}
+
+.service-card:hover .service-card-icon {
+  @apply bg-orange-600 text-white scale-110;
+}
+
+.service-card-title {
+  @apply text-xl font-bold text-gray-900 mb-2;
+  @apply transition-colors duration-300;
+}
+
+.service-card:hover .service-card-title {
+  @apply text-orange-600;
+}
+
+.service-card-description {
+  @apply text-gray-600 text-sm leading-relaxed;
+}
+
+// Container utilities
+.container-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-8 sm:py-12 lg:py-16;
+}
+
+// Typography utilities
+.heading-1 {
+  @apply text-3xl sm:text-4xl lg:text-5xl font-bold;
+}
+
+.heading-2 {
+  @apply text-2xl sm:text-3xl lg:text-4xl font-bold;
+}
+
+.heading-3 {
+  @apply text-xl sm:text-2xl lg:text-3xl font-semibold;
+}
+
+.text-body {
+  @apply text-base sm:text-lg;
+}
+
+.text-body-sm {
+  @apply text-sm sm:text-base;
+}
+
+// Logo and branding
 .coderic {
   vertical-align: middle;
   height: 50px;
@@ -38,184 +240,181 @@ body {
   font-weight: normal;
   font-stretch: normal;
   font-family: 'Red Hat Display';
-  letter-spacing:-2px;
+  letter-spacing: -2px;
 }
+
+// Background patterns
 .bg-pattern {
-    background-image: url(../../images/pattern.png);
+  background-image: url(../../images/pattern.png);
 }
 
-.cards-animate .card {
-    position: relative;
-    border-radius: 15px;
-    background: url(../../images/feature6.png) #e5e7eb;
-    z-index: 1;
-    margin-bottom: 30px;
-    overflow: hidden;
-}
-
-.cards-animate .card::before {  
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    left: -17%;
-    top: -3%;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-position: center;
-}
 .jumbotron {
-    background-image: url(../../images/breadcumb-bg.png) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+  background-image: url(../../images/breadcumb-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
-.cards-animate .card::after {  
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    transition: 0.5s;
-    z-index: -1;
-    background: url(../../images/feature7.png);
-    border-radius: 15px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    right: 0;
-    bottom: 0;
-    transform: perspective(500px) rotateX(-90deg);
-    opacity: 0;
+
+// Card animations
+.cards-animate .card {
+  position: relative;
+  border-radius: 15px;
+  background: url(../../images/feature6.png) #e5e7eb;
+  z-index: 1;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.cards-animate .card::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  left: -17%;
+  top: -3%;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cards-animate .card::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+  z-index: -1;
+  background: url(../../images/feature7.png);
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  right: 0;
+  bottom: 0;
+  transform: perspective(500px) rotateX(-90deg);
+  opacity: 0;
 }
 
 .cards-animate .card:hover::after {
-    transform: perspective(500px) rotateX(0deg);
-    opacity: 1;
-  }
+  transform: perspective(500px) rotateX(0deg);
+  opacity: 1;
+}
 
 .cards-animate .card:hover::before {
-    clip-path: polygon(
-        25% -70%,
-        75% -70%,
-        120% 50%,
-        75% 170%,
-        25% 170%,
-        -20% 50%
-    );
+  clip-path: polygon(
+    25% -70%,
+    75% -70%,
+    120% 50%,
+    75% 170%,
+    25% 170%,
+    -20% 50%
+  );
 }
+
 .cards-animate .card:hover {
-    border: 1px solid #ff4208;
-  }
+  border: 1px solid #ff4208;
+}
 
-  
-  .cards-animate .card .icon {
-    width: 75px;
-    height: 75px;
-    border-radius: 38px;
-    background-color: rgba(255, 255, 255, 0.4);
-    border: 2px solid #ffffff;
-    line-height: 70px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .cards-animate .card .icon svg {
-    transition: 0.5s;
-    filter: brightness(1) invert(0);
-  }
-  
-  .cards-animate .card .icon::before {
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: #171a2b;
-    left: 0;
-    top: 0;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 0.5s;
-  }
-  
-  .cards-animate .card h3 {
-    font-size: 18px;
-    color: #050a1e;
-    font-weight: 600;
-    font-family: "Poppins";
-    margin: 0;
-    padding: 6px 0 0px;
-    transition: 0.5s;
-    cursor: pointer;
-  }
-  
-  .cards-animate .card p {
-    font-size: 16px;
-    line-height: 26px;
-    color: #525252;
-    font-weight: 400;
-    font-family: "Fira Sans";
-    margin: 0;
-    transition: 0.5s;
-  }
-    
-  .cards-animate .card:hover .icon::before {
-    transform: scale(1);
-  }
-  
-  .cards-animate .card:hover .icon svg {
-    filter: brightness(0) invert(1);
-  }
-  
-  .cards-animate .card:hover h3 {
-    color: #fff;
-  }
-  
-  .cards-animate .card:hover p {
-    color: #fff;
-  }
+.cards-animate .card .icon {
+  width: 75px;
+  height: 75px;
+  border-radius: 38px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid #ffffff;
+  line-height: 70px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
 
+.cards-animate .card .icon svg {
+  transition: 0.5s;
+  filter: brightness(1) invert(0);
+}
 
+.cards-animate .card .icon::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #171a2b;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.cards-animate .card h3 {
+  font-size: 18px;
+  color: #050a1e;
+  font-weight: 600;
+  font-family: "Poppins";
+  margin: 0;
+  padding: 6px 0 0px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.cards-animate .card p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #525252;
+  font-weight: 400;
+  font-family: "Fira Sans";
+  margin: 0;
+  transition: 0.5s;
+}
+
+.cards-animate .card:hover .icon::before {
+  transform: scale(1);
+}
+
+.cards-animate .card:hover .icon svg {
+  filter: brightness(0) invert(1);
+}
+
+.cards-animate .card:hover h3 {
+  color: #fff;
+}
+
+.cards-animate .card:hover p {
+  color: #fff;
+}
+
+// Language grid
 .lang-grid {
-    list-style: none;
-    margin-bottom: 3em;
-    padding-left: 0
+  list-style: none;
+  margin-bottom: 3em;
+  padding-left: 0;
+  padding-top: 2em;
 }
 
 .lang-grid li {
-    display: inline-block;
-    width: 80px;
-    height: 130px;
-    margin-left: 20px;
-    margin-right: 20px
+  display: inline-block;
+  width: 80px;
+  height: 130px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .lang-grid li .lang-logo {
-    display: block;
-    position: relative;
-    font-weight: 700
+  display: block;
+  position: relative;
+  font-weight: 700;
 }
 
 .lang-grid li .lang-logo span {
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: #c0c0c0;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #c0c0c0;
 }
 
 .lang-grid li .lang-logo:hover span {
-    color: #000;
-}
-
-.lang-grid {
-    padding-top: 2em;
-}
-.lang-grid li .lang-logo {
-    display: block;
-    position: relative;
-    font-weight: 700;
+  color: #000;
 }
 
 .lang-logo {
@@ -224,7 +423,7 @@ body {
   height: 80px;
   width: 80px;
   background-repeat: no-repeat;
-  background-image: url(../../images/lang-logo.png)
+  background-image: url(../../images/lang-logo.png);
 }
 
 .lang-logo.nodejs {
@@ -275,26 +474,14 @@ body {
   background-position: -400px 0;
 }
 
-.lang-logo.scala {
-  background-position: -480px -80px;
-}
-
-.lang-logo.scala:hover {
-  background-position: -480px 0;
-}
-
-.lang-logo.scala-play {
-  background-position: -480px -80px;
-}
-
-.lang-logo.scala-play:hover {
-  background-position: -480px 0;
-}
-
+.lang-logo.scala,
+.lang-logo.scala-play,
 .lang-logo.scala-and-play {
   background-position: -480px -80px;
 }
 
+.lang-logo.scala:hover,
+.lang-logo.scala-play:hover,
 .lang-logo.scala-and-play:hover {
   background-position: -480px 0;
 }
@@ -307,18 +494,52 @@ body {
   background-position: -560px 0;
 }
 
-.lang-logo.dotnet {
-  background-position: -640px -80px;
-}
-
-.lang-logo.dotnet:hover {
-  background-position: -640px 0;
-}
-
+.lang-logo.dotnet,
 .lang-logo.net {
   background-position: -640px -80px;
 }
 
+.lang-logo.dotnet:hover,
 .lang-logo.net:hover {
   background-position: -640px 0;
+}
+
+// Responsive improvements
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+// Print styles
+@media print {
+  nav,
+  footer,
+  .no-print {
+    display: none;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  a {
+    text-decoration: underline;
+  }
+  
+  button,
+  .btn {
+    border: 2px solid currentColor;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
