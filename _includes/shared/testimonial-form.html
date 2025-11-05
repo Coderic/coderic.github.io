@@ -1,0 +1,88 @@
+<!-- Testimonial Submission Form -->
+<section class="bg-stone-800 text-white py-16">
+  <div class="max-w-4xl mx-auto px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4">Comparte tu Experiencia</h2>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        ¿Has sido parte de Coderic? Tu testimonio real ayuda a otros a conocer la comunidad. Comparte tu historia con nosotros.
+      </p>
+    </div>
+    
+    <form action="https://github.com/Coderic" method="GET" class="bg-stone-700 p-8 rounded-lg">
+      <div class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-sm font-bold mb-2">Tu Nombre Completo</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              class="w-full px-4 py-3 bg-stone-600 border border-stone-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="Ej: Neftalí Yagua">
+          </div>
+          <div>
+            <label for="role" class="block text-sm font-bold mb-2">Tu Rol o Posición</label>
+            <input 
+              type="text" 
+              id="role" 
+              name="role" 
+              required 
+              class="w-full px-4 py-3 bg-stone-600 border border-stone-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              placeholder="Ej: Full Stack Developer">
+          </div>
+        </div>
+        
+        <div>
+          <label for="github" class="block text-sm font-bold mb-2">Tu Usuario de GitHub</label>
+          <input 
+            type="text" 
+            id="github" 
+            name="github" 
+            required 
+            class="w-full px-4 py-3 bg-stone-600 border border-stone-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            placeholder="@tuusuario">
+        </div>
+        
+        <div>
+          <label for="testimonial" class="block text-sm font-bold mb-2">Tu Testimonio</label>
+          <textarea 
+            id="testimonial" 
+            name="testimonial" 
+            rows="6" 
+            required 
+            class="w-full px-4 py-3 bg-stone-600 border border-stone-500 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            placeholder="Cuéntanos tu experiencia real en Coderic. ¿Qué lograste? ¿Cómo te ayudó la comunidad? ¿Qué aprendiste?"></textarea>
+        </div>
+        
+        <div class="bg-stone-600 p-4 rounded-lg">
+          <p class="text-sm text-gray-300">
+            <strong>📝 Nota importante:</strong> Solo publicamos testimonios reales y verificables. Tu testimonio será revisado y, si es aprobado, aparecerá con tu nombre y enlace a tu perfil de GitHub.
+          </p>
+        </div>
+        
+        <div class="flex items-center">
+          <input 
+            type="checkbox" 
+            id="consent" 
+            name="consent" 
+            required 
+            class="w-5 h-5 bg-stone-600 border-stone-500 rounded focus:ring-2 focus:ring-orange-500">
+          <label for="consent" class="ml-3 text-sm text-gray-300">
+            Autorizo a Coderic a publicar mi testimonio con mi nombre y perfil de GitHub
+          </label>
+        </div>
+        
+        <button 
+          type="submit" 
+          class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105">
+          Enviar mi Testimonio Real
+        </button>
+      </div>
+    </form>
+    
+    <p class="text-center text-sm text-gray-400 mt-6">
+      Los testimonios serán publicados después de verificación. No aceptamos contenido falso o lipsum.
+    </p>
+  </div>
+</section>
