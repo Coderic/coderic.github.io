@@ -26,5 +26,5 @@ exclude:
   - Gemfile.lock
   - README.md
   - LICENSE
-  - coderic.org.gemspec
+  - coderic.github.io.gemspec
   - docs/
