@@ -6,8 +6,7 @@ description: "Corporation Oriented to the Development of Engineering Resources a
 permalink: pretty
 
 # Theme configuration
-theme: jekyll-theme-coderic
-# remote_theme: Coderic/jekyll-theme-coderic
+remote_theme: Coderic/jekyll-theme-coderic
 
 # Logo
 logo: "/assets/img/coderic-isotipo.svg"
