@@ -6,10 +6,46 @@ description: "Corporation Oriented to the Development of Engineering Resources a
 permalink: pretty
 
 # Theme configuration
-theme: null
+theme: jekyll-theme-coderic
+# remote_theme: Coderic/jekyll-theme-coderic
+
+# Logo
+logo: "/assets/img/coderic-isotipo.svg"
+
+# Navigation
+navigation:
+  - label: "Development"
+    url: "/development"
+  - label: "Crowdfunding"
+    url: "/crowdfunding"
+  - label: "Coworking"
+    url: "/coworking"
+  - label: "Freelancers"
+    url: "/freelancers"
+  - label: "Learning"
+    url: "/learning"
+  - label: "Community"
+    url: "/community"
+  - label: "Organization"
+    url: "/organization"
+
+# Footer Links
+footer_links:
+  - label: "Documentation"
+    url: "https://coderic.org/docs/"
+
+# Legal URLs
+privacy_url: "/privacy"
+legal_url: "/legal"
+tos_url: "/tos"
+
+# Auth URLs
+profile_url: "/profile"
+dashboard_url: "/dashboard"
 
 # Plugins
 plugins:
+  - jekyll-remote-theme
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
@@ -26,5 +62,4 @@ exclude:
   - Gemfile.lock
   - README.md
   - LICENSE
-  - coderic.github.io.gemspec
   - docs/
