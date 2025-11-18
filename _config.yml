@@ -1,9 +1,9 @@
 url: "https://coderic.org"
 baseurl: ""
 title: "Coderic"
-subtitle: "Organization & Development Team"
+subtitle: "Organization"
 network: "ORG"
-description: "Corporation Oriented to the Development of Engineering Resources and Information for Commerce"
+description: "Corporation Oriented to the Development of Engineering Resources and Information for Commerce. Información corporativa, historia y valores."
 permalink: pretty
 
 # Theme configuration
@@ -14,18 +14,12 @@ logo: "/assets/img/coderic-isotipo.svg"
 
 # Navigation
 navigation:
-  - label: "Development"
-    url: "/development"
-  - label: "Crowdfunding"
-    url: "/crowdfunding"
-  - label: "Coworking"
-    url: "/coworking"
-  - label: "Freelancers"
-    url: "/freelancers"
-  - label: "Learning"
-    url: "/learning"
-  - label: "Community"
-    url: "/community"
+  - label: "Inicio"
+    url: "/"
+  - label: "Acerca de"
+    url: "/about"
+  - label: "Organización"
+    url: "/organization"
 
 # Footer Links
 footer_links:
