@@ -12,20 +12,34 @@ remote_theme: Coderic/jekyll-theme-coderic
 # Logo
 logo: "/assets/img/coderic-isotipo.svg"
 
-# Navigation
+# Navigation (compatible with flyout menu)
 navigation:
-  - label: "Development"
-    url: "/development"
-  - label: "Crowdfunding"
-    url: "/crowdfunding"
-  - label: "Coworking"
-    url: "/coworking"
-  - label: "Freelancers"
-    url: "/freelancers"
-  - label: "Learning"
-    url: "/learning"
-  - label: "Community"
-    url: "/community"
+  - label: "Inicio"
+    url: "/"
+  - label: "Servicios"
+    url: "/#services"
+    has_flyout: true
+    flyout_sections:
+      - title: "Servicios de Desarrollo"
+        links:
+          - label: "Development"
+            url: "/development"
+            description: "Servicios de desarrollo y consultoría"
+          - label: "Crowdfunding"
+            url: "/crowdfunding"
+            description: "Plataforma de financiamiento colectivo"
+          - label: "Coworking"
+            url: "/coworking"
+            description: "Espacios de trabajo colaborativo"
+          - label: "Freelancers"
+            url: "/freelancers"
+            description: "Plataforma para freelancers"
+          - label: "Learning"
+            url: "/learning"
+            description: "Recursos de aprendizaje y capacitación"
+          - label: "Community"
+            url: "/community"
+            description: "Comunidad y networking"
 
 # Footer Links
 footer_links:
