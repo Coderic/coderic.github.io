@@ -14,10 +14,16 @@ logo: "/assets/img/coderic-isotipo.svg"
 
 # Navigation
 navigation:
-  - label: "Acerca de"
+  - label: "Conócenos"
     url: "/about"
-  - label: "Organización"
-    url: "/organization"
+  - label: "Historia"
+    url: "/history"
+  - label: "Equipo"
+    url: "/team"
+  - label: "Únete a Coderic"
+    url: "/join"
+  - label: "Políticas"
+    url: "/policies"
 
 # Footer Links
 footer_links:
