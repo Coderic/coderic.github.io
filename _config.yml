@@ -1,7 +1,8 @@
 url: "https://coderic.org"
 baseurl: ""
 title: "Coderic"
-network: ""
+subtitle: "Organization & Development Team"
+network: "ORG"
 description: "Corporation Oriented to the Development of Engineering Resources and Information for Commerce"
 permalink: pretty
 
