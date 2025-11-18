@@ -14,8 +14,6 @@ logo: "/assets/img/coderic-isotipo.svg"
 
 # Navigation
 navigation:
-  - label: "Inicio"
-    url: "/"
   - label: "Acerca de"
     url: "/about"
   - label: "Organización"
