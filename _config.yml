@@ -1,61 +1,14 @@
-url: "https://coderic.org"
-baseurl: ""
+# Sitio mínimo oss.coderic.org - Open Source / proyectos libres
 title: "Coderic"
-subtitle: "Organization"
-network: "ORG"
-description: "Corporación Orientada al Desarrollo Estratégico de Recursos de Información Comercial. Información corporativa, historia y valores."
-permalink: pretty
+description: "Proyectos open source y software libre por Coderic"
+url: "https://oss.coderic.org"
+baseurl: ""
 
-# Theme configuration
 remote_theme: Coderic/jekyll-theme-coderic
 
-# Logo
-logo: "/assets/img/coderic-isotipo.svg"
-
-# Navigation
-navigation:
-  - label: "Conócenos"
-    url: "/about"
-  - label: "Historia"
-    url: "/history"
-  - label: "Equipo"
-    url: "/team"
-  - label: "Únete a Coderic"
-    url: "/join"
-  - label: "Políticas"
-    url: "/policies"
-
-# Footer Links
-footer_links:
-  - label: "Documentation"
-    url: "https://coderic.org/docs/"
-
-# Legal URLs
-privacy_url: "/privacy"
-legal_url: "/legal"
-tos_url: "/tos"
-
-# Auth URLs
-profile_url: "/profile"
-dashboard_url: "/dashboard"
-
-# Plugins
 plugins:
-  - jekyll-remote-theme
-  - jekyll-sitemap
-  - jekyll-seo-tag
   - jekyll-feed
-  - jekyll-github-metadata
+  - jekyll-sitemap
 
-# Sass configuration
-sass:
-  style: compressed
-  sourcemap: never
-
-# Exclude files from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
-  - LICENSE
-  - docs/
+markdown: kramdown
+permalink: pretty
